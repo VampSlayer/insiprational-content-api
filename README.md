@@ -1,4 +1,4 @@
-# insiprational-content-api
+# inspirational-content-api
 Inspirational Content API
 
 Documentation at root endpoint
