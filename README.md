@@ -1,6 +1,6 @@
 # inspirational-content-api
 Inspirational Content API
 
-Documentation at root endpoint
+[Live](https://inspirational-content-api.herokuapp.com/)
 
 More coming soon...
