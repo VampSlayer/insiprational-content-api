@@ -35,7 +35,10 @@ mantra_feeds = [{'id': 0, 'name': 'Happiness'}, {'id': 1, 'name': 'Inspiration'}
 class GetMantraFeeds(Resource):
     def get(self):
         """Get all the mantra feeds"""
-        return jsonify(mantra_feeds)
+        response = jsonify(mantra_feeds)
+        response.headers.add('Access-Control-Allow-Origin', '*')
+
+        return response
 
 
 mantras = {
@@ -66,7 +69,10 @@ class GetAMantra(Resource):
 
         mantra = get_random_feed_item(feeds_query, mantras)
 
-        return jsonify(mantra)
+        response = jsonify(mantra)
+        response.headers.add('Access-Control-Allow-Origin', '*')
+
+        return response
 
 
 quotes_ns = api.namespace('quotes', description='Quotes')
@@ -79,7 +85,9 @@ quote_feeds = [{'id': 0, 'name': 'Stoicism'}, {'id': 1, 'name': 'Buddhism'}, {'i
 class GetQuoteFeeds(Resource):
     def get(self):
         """Get all the quote feeds"""
-        return jsonify(quote_feeds)
+        response = jsonify(quote_feeds)
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
 
 
 quotes = {
@@ -111,7 +119,10 @@ class GetAQuote(Resource):
 
         quote = get_random_feed_item(feeds_query, quotes)
 
-        return jsonify(quote)
+        response = jsonify(quote)
+        response.headers.add('Access-Control-Allow-Origin', '*')
+
+        return response
 
 
 if __name__ == '__main__':
